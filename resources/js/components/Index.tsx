@@ -1,32 +1,42 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+import {RouteComponentProps} from 'react-router';
 import {Link} from 'react-router-dom';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import {brownPaper}  from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {brownPaper} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import axios from 'axios';
 
-export default class Index extends Component {
+type User = {
+    name: string;
+}
+
+type Query = {
+    id: number;
+    name: string;
+    query: string;
+    user: User;
+    updated_at: string;
+}
+
+type matchParams = {
+}
+
+interface Props extends RouteComponentProps<matchParams> {
+}
+
+type State = {
+    queries: Query[];
+}
+
+export default class Index extends React.Component<Props, State> {
     constructor(props) {
         super(props);
 
         this.state = {
-            query: {
-                name: '',
-                query: '',
-            },
             queries: undefined,
         };
 
-        this.handleChange = this.handleChange.bind(this);
         this.renderQueries = this.renderQueries.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
-    }
-
-    handleChange(e) {
-        const query = this.state.query;
-        query[e.target.id] = e.target.value;
-
-        this.setState({
-            query: query,
-        });
     }
 
     renderQueries() {
@@ -36,7 +46,13 @@ export default class Index extends Component {
             const queries = this.state.queries.map((query) => (
                 <tr key={query.id}>
                     <td className="text-nowrap pr-2">{query.name}</td>
-                    <td className="w-100 pr-2 query"><SyntaxHighlighter language="sql" style={brownPaper}>{query.query}</SyntaxHighlighter></td>
+                    <td className="w-100 pr-2 query">
+                        <SyntaxHighlighter
+                            language="sql"
+                            style={brownPaper}>
+                            {query.query}
+                        </SyntaxHighlighter>
+                    </td>
                     <td className="text-nowrap pr-2">{query.user.name}</td>
                     <td className="text-nowrap pr-2">{query.updated_at}</td>
                     <td className="text-nowrap">
@@ -71,7 +87,7 @@ export default class Index extends Component {
                         <th>Query</th>
                         <th>User</th>
                         <th>Last updated</th>
-                        <th></th>
+                        <th/>
                     </tr>
                     </thead>
                     <tbody>
@@ -103,7 +119,7 @@ export default class Index extends Component {
     }
 
     render() {
-        if (typeof this.state.queries == "undefined") return <div></div>;
+        if (typeof this.state.queries == "undefined") return <div/>;
 
         return (
             <div>

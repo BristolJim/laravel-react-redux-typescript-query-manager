@@ -1,13 +1,47 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+import {RouteComponentProps} from 'react-router';
+import axios from 'axios';
 
-export default class QueryEdit extends Component {
+type User = {
+    name: string;
+}
+
+type Query = {
+    id: number;
+    name: string;
+    query: string;
+    user: User;
+    updated_at: string;
+}
+
+type matchParams = {
+    id: string;
+}
+
+interface Props extends RouteComponentProps<matchParams> {
+}
+
+type State = {
+    edit: boolean;
+    query: Query;
+}
+
+export default class QueryEdit extends React.Component<Props, State> {
     constructor(props) {
         super(props);
         const edit = !!this.props.match.params.id;
 
         this.state = {
             edit: edit,
-            query: edit ? undefined : {},
+            query: edit ? undefined : {
+                id: null,
+                name: '',
+                query: '',
+                user: {
+                    name: ''
+                },
+                updated_at: '',
+            },
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -41,7 +75,7 @@ export default class QueryEdit extends Component {
 
         req.data = this.state.query;
 
-        axios(req).then(response => {
+        axios(req).then(() => {
             this.props.history.push('/home');
         });
 
@@ -60,11 +94,6 @@ export default class QueryEdit extends Component {
     componentWillMount() {
         if (this.state.edit) {
             this.getQuery();
-        } else {
-            this.state.query = {
-                name: '',
-                query: '',
-            }
         }
     }
 
@@ -96,10 +125,10 @@ export default class QueryEdit extends Component {
                                         id="query"
                                         onChange={this.handleChange}
                                         value={this.state.query.query}
-                                        rows="10"
                                         className="form-control text-monospace"
                                         placeholder="SQL"
-                                        maxLength="255"
+//                                        rows="10"
+//                                        maxLength="255"
                                         required
                                     />
                                 </div>

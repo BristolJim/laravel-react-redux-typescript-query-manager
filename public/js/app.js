@@ -110738,7 +110738,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 
-__webpack_require__(/*! ./index.jsx */ "./resources/js/index.jsx");
+__webpack_require__(/*! ./index.tsx */ "./resources/js/index.tsx");
 
 /***/ }),
 
@@ -110800,547 +110800,350 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Index.jsx":
+/***/ "./resources/js/components/Index.tsx":
 /*!*******************************************!*\
-  !*** ./resources/js/components/Index.jsx ***!
+  !*** ./resources/js/components/Index.tsx ***!
   \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var react_syntax_highlighter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-syntax-highlighter */ "./node_modules/react-syntax-highlighter/dist/esm/index.js");
-/* harmony import */ var react_syntax_highlighter_dist_esm_styles_hljs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-syntax-highlighter/dist/esm/styles/hljs */ "./node_modules/react-syntax-highlighter/dist/esm/styles/hljs/index.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-var Index =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Index, _Component);
-
-  function Index(props) {
-    var _this;
-
-    _classCallCheck(this, Index);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
-    _this.state = {
-      query: {
-        name: '',
-        query: ''
-      },
-      queries: undefined
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
     };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    _this.renderQueries = _this.renderQueries.bind(_assertThisInitialized(_this));
-    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(Index, [{
-    key: "handleChange",
-    value: function handleChange(e) {
-      var query = this.state.query;
-      query[e.target.id] = e.target.value;
-      this.setState({
-        query: query
-      });
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+var react_syntax_highlighter_1 = __webpack_require__(/*! react-syntax-highlighter */ "./node_modules/react-syntax-highlighter/dist/esm/index.js");
+var hljs_1 = __webpack_require__(/*! react-syntax-highlighter/dist/esm/styles/hljs */ "./node_modules/react-syntax-highlighter/dist/esm/styles/hljs/index.js");
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+var Index = (function (_super) {
+    __extends(Index, _super);
+    function Index(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            queries: undefined,
+        };
+        _this.renderQueries = _this.renderQueries.bind(_this);
+        _this.handleDelete = _this.handleDelete.bind(_this);
+        return _this;
     }
-  }, {
-    key: "renderQueries",
-    value: function renderQueries() {
-      var _this2 = this;
-
-      if (!this.state.queries.length) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "There are no queries.");
-      } else {
-        var queries = this.state.queries.map(function (query) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
-            key: query.id
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-            className: "text-nowrap pr-2"
-          }, query.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-            className: "w-100 pr-2 query"
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_syntax_highlighter__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            language: "sql",
-            style: react_syntax_highlighter_dist_esm_styles_hljs__WEBPACK_IMPORTED_MODULE_3__["brownPaper"]
-          }, query.query)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-            className: "text-nowrap pr-2"
-          }, query.user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-            className: "text-nowrap pr-2"
-          }, query.updated_at), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-            className: "text-nowrap"
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-            to: "/".concat(query.id, "/edit"),
-            className: "btn btn-xs btn-outline-secondary mr-1"
-          }, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-            to: "/".concat(query.id, "/execute"),
-            className: "btn btn-xs btn-outline-secondary mr-1"
-          }, "Execute"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-            to: "#",
-            className: "btn btn-xs btn-outline-secondary",
-            onClick: function onClick() {
-              return _this2.handleDelete(query.id);
-            }
-          }, "Delete")));
+    Index.prototype.renderQueries = function () {
+        var _this = this;
+        if (!this.state.queries.length) {
+            return React.createElement("p", null, "There are no queries.");
+        }
+        else {
+            var queries = this.state.queries.map(function (query) { return (React.createElement("tr", { key: query.id },
+                React.createElement("td", { className: "text-nowrap pr-2" }, query.name),
+                React.createElement("td", { className: "w-100 pr-2 query" },
+                    React.createElement(react_syntax_highlighter_1.default, { language: "sql", style: hljs_1.brownPaper }, query.query)),
+                React.createElement("td", { className: "text-nowrap pr-2" }, query.user.name),
+                React.createElement("td", { className: "text-nowrap pr-2" }, query.updated_at),
+                React.createElement("td", { className: "text-nowrap" },
+                    React.createElement(react_router_dom_1.Link, { to: "/" + query.id + "/edit", className: "btn btn-xs btn-outline-secondary mr-1" }, "Edit"),
+                    React.createElement(react_router_dom_1.Link, { to: "/" + query.id + "/execute", className: "btn btn-xs btn-outline-secondary mr-1" }, "Execute"),
+                    React.createElement(react_router_dom_1.Link, { to: '#', className: "btn btn-xs btn-outline-secondary", onClick: function () { return _this.handleDelete(query.id); } }, "Delete")))); });
+            return (React.createElement("table", { className: "table table-sm table-striped" },
+                React.createElement("thead", null,
+                    React.createElement("tr", null,
+                        React.createElement("th", null, "Name"),
+                        React.createElement("th", null, "Query"),
+                        React.createElement("th", null, "User"),
+                        React.createElement("th", null, "Last updated"),
+                        React.createElement("th", null))),
+                React.createElement("tbody", null, queries)));
+        }
+    };
+    Index.prototype.getQueries = function () {
+        var _this = this;
+        axios_1.default.get('/queries').then(function (response) {
+            return _this.setState({
+                queries: response.data.queries.slice()
+            });
         });
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-          className: "table table-sm table-striped"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Query"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "User"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Last updated"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, queries));
-      }
-    }
-  }, {
-    key: "getQueries",
-    value: function getQueries() {
-      var _this3 = this;
-
-      axios.get('/queries').then(function (response) {
-        return _this3.setState({
-          queries: _toConsumableArray(response.data.queries)
-        });
-      });
-    }
-  }, {
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      this.getQueries();
-    }
-  }, {
-    key: "handleDelete",
-    value: function handleDelete(id) {
-      var isNotId = function isNotId(query) {
-        return query.id !== id;
-      };
-
-      var updatedQueries = this.state.queries.filter(isNotId);
-      this.setState({
-        queries: updatedQueries
-      });
-      axios.delete("/queries/".concat(id));
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      if (typeof this.state.queries == "undefined") return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Queries"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col pb-2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        className: "btn btn-primary float-right",
-        to: "/add"
-      }, "Add Query"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, this.renderQueries())));
-    }
-  }]);
-
-  return Index;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
+    };
+    Index.prototype.componentWillMount = function () {
+        this.getQueries();
+    };
+    Index.prototype.handleDelete = function (id) {
+        var isNotId = function (query) { return query.id !== id; };
+        var updatedQueries = this.state.queries.filter(isNotId);
+        this.setState({ queries: updatedQueries });
+        axios_1.default.delete("/queries/" + id);
+    };
+    Index.prototype.render = function () {
+        if (typeof this.state.queries == "undefined")
+            return React.createElement("div", null);
+        return (React.createElement("div", null,
+            React.createElement("div", { className: "row" },
+                React.createElement("div", { className: "col" },
+                    React.createElement("h1", null, "Queries"))),
+            React.createElement("div", { className: "row" },
+                React.createElement("div", { className: "col pb-2" },
+                    React.createElement(react_router_dom_1.Link, { className: "btn btn-primary float-right", to: "/add" }, "Add Query"))),
+            React.createElement("div", { className: "row" },
+                React.createElement("div", { className: "col" }, this.renderQueries()))));
+    };
+    return Index;
+}(React.Component));
+exports.default = Index;
 
 
 /***/ }),
 
-/***/ "./resources/js/components/QueryEdit.jsx":
+/***/ "./resources/js/components/QueryEdit.tsx":
 /*!***********************************************!*\
-  !*** ./resources/js/components/QueryEdit.jsx ***!
+  !*** ./resources/js/components/QueryEdit.tsx ***!
   \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return QueryEdit; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var QueryEdit =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(QueryEdit, _Component);
-
-  function QueryEdit(props) {
-    var _this;
-
-    _classCallCheck(this, QueryEdit);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(QueryEdit).call(this, props));
-    var edit = !!_this.props.match.params.id;
-    _this.state = {
-      edit: edit,
-      query: edit ? undefined : {}
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
     };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(QueryEdit, [{
-    key: "handleChange",
-    value: function handleChange(e) {
-      var query = this.state.query;
-      query[e.target.id] = e.target.value;
-      this.setState({
-        query: query
-      });
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      var _this2 = this;
-
-      e.preventDefault();
-      var req;
-
-      if (this.state.edit) {
-        req = {
-          url: "/queries/".concat(this.props.match.params.id),
-          method: 'PUT'
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+var QueryEdit = (function (_super) {
+    __extends(QueryEdit, _super);
+    function QueryEdit(props) {
+        var _this = _super.call(this, props) || this;
+        var edit = !!_this.props.match.params.id;
+        _this.state = {
+            edit: edit,
+            query: edit ? undefined : {
+                id: null,
+                name: '',
+                query: '',
+                user: {
+                    name: ''
+                },
+                updated_at: '',
+            },
         };
-      } else {
-        req = {
-          url: "/queries/",
-          method: 'POST'
-        };
-      }
-
-      req.data = this.state.query;
-      axios(req).then(function (response) {
-        _this2.props.history.push('/home');
-      });
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+        return _this;
     }
-  }, {
-    key: "getQuery",
-    value: function getQuery() {
-      var _this3 = this;
-
-      axios.get("/queries/".concat(this.props.match.params.id, "/edit")).then(function (response) {
-        return _this3.setState({
-          query: response.data.query
+    QueryEdit.prototype.handleChange = function (e) {
+        var query = this.state.query;
+        query[e.target.id] = e.target.value;
+        this.setState({
+            query: query
         });
-      });
-    }
-  }, {
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      if (this.state.edit) {
-        this.getQuery();
-      } else {
-        this.state.query = {
-          name: '',
-          query: ''
-        };
-      }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      if (this.state.edit && typeof this.state.query == "undefined") return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row justify-content-center"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-8"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header"
-      }, "New Query"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "form-group"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "name"
-      }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        id: "name",
-        onChange: this.handleChange,
-        value: this.state.query.name,
-        className: "form-control",
-        placeholder: "Query name",
-        required: true
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "form-group"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "query"
-      }, "SQL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-        id: "query",
-        onChange: this.handleChange,
-        value: this.state.query.query,
-        rows: "10",
-        className: "form-control text-monospace",
-        placeholder: "SQL",
-        maxLength: "255",
-        required: true
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "submit",
-        className: "btn btn-primary"
-      }, "Save Query"))))));
-    }
-  }]);
-
-  return QueryEdit;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
+    };
+    QueryEdit.prototype.handleSubmit = function (e) {
+        var _this = this;
+        e.preventDefault();
+        var req;
+        if (this.state.edit) {
+            req = {
+                url: "/queries/" + this.props.match.params.id,
+                method: 'PUT',
+            };
+        }
+        else {
+            req = {
+                url: "/queries/",
+                method: 'POST',
+            };
+        }
+        req.data = this.state.query;
+        axios_1.default(req).then(function () {
+            _this.props.history.push('/home');
+        });
+    };
+    QueryEdit.prototype.getQuery = function () {
+        var _this = this;
+        axios_1.default
+            .get("/queries/" + this.props.match.params.id + "/edit")
+            .then(function (response) {
+            return _this.setState({
+                query: response.data.query,
+            });
+        });
+    };
+    QueryEdit.prototype.componentWillMount = function () {
+        if (this.state.edit) {
+            this.getQuery();
+        }
+    };
+    QueryEdit.prototype.render = function () {
+        if (this.state.edit && typeof this.state.query == "undefined")
+            return React.createElement("div", null);
+        return (React.createElement("div", { className: "row justify-content-center" },
+            React.createElement("div", { className: "col-md-8" },
+                React.createElement("div", { className: "card" },
+                    React.createElement("div", { className: "card-header" }, "New Query"),
+                    React.createElement("div", { className: "card-body" },
+                        React.createElement("form", { onSubmit: this.handleSubmit },
+                            React.createElement("div", { className: "form-group" },
+                                React.createElement("label", { htmlFor: "name" }, "Name"),
+                                React.createElement("input", { type: "text", id: "name", onChange: this.handleChange, value: this.state.query.name, className: "form-control", placeholder: "Query name", required: true })),
+                            React.createElement("div", { className: "form-group" },
+                                React.createElement("label", { htmlFor: "query" }, "SQL"),
+                                React.createElement("textarea", { id: "query", onChange: this.handleChange, value: this.state.query.query, className: "form-control text-monospace", placeholder: "SQL", required: true })),
+                            React.createElement("button", { type: "submit", className: "btn btn-primary" }, "Save Query")))))));
+    };
+    return QueryEdit;
+}(React.Component));
+exports.default = QueryEdit;
 
 
 /***/ }),
 
-/***/ "./resources/js/components/QueryExecute.jsx":
+/***/ "./resources/js/components/QueryExecute.tsx":
 /*!**************************************************!*\
-  !*** ./resources/js/components/QueryExecute.jsx ***!
+  !*** ./resources/js/components/QueryExecute.tsx ***!
   \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return QueryExecute; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_syntax_highlighter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-syntax-highlighter */ "./node_modules/react-syntax-highlighter/dist/esm/index.js");
-/* harmony import */ var react_syntax_highlighter_dist_esm_styles_hljs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-syntax-highlighter/dist/esm/styles/hljs */ "./node_modules/react-syntax-highlighter/dist/esm/styles/hljs/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-var QueryExecute =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(QueryExecute, _Component);
-
-  function QueryExecute(props) {
-    var _this;
-
-    _classCallCheck(this, QueryExecute);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(QueryExecute).call(this, props));
-    _this.state = {
-      query: undefined
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
     };
-    _this.renderResult = _this.renderResult.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(QueryExecute, [{
-    key: "executeQuery",
-    value: function executeQuery() {
-      var _this2 = this;
-
-      axios.get("/queries/".concat(this.props.match.params.id, "/execute")).then(function (response) {
-        return _this2.setState({
-          result: response.data.result,
-          error: response.data.error,
-          query: response.data.query
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+var react_syntax_highlighter_1 = __webpack_require__(/*! react-syntax-highlighter */ "./node_modules/react-syntax-highlighter/dist/esm/index.js");
+var hljs_1 = __webpack_require__(/*! react-syntax-highlighter/dist/esm/styles/hljs */ "./node_modules/react-syntax-highlighter/dist/esm/styles/hljs/index.js");
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+var QueryExecute = (function (_super) {
+    __extends(QueryExecute, _super);
+    function QueryExecute(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            query: undefined,
+            result: undefined,
+            error: undefined,
+        };
+        _this.renderResult = _this.renderResult.bind(_this);
+        return _this;
+    }
+    QueryExecute.prototype.executeQuery = function () {
+        var _this = this;
+        axios_1.default
+            .get("/queries/" + this.props.match.params.id + "/execute")
+            .then(function (response) {
+            return _this.setState({
+                result: response.data.result,
+                error: response.data.error,
+                query: response.data.query,
+            });
         });
-      });
-    }
-  }, {
-    key: "renderResult",
-    value: function renderResult() {
-      if (this.state.error) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "ERROR:"), " ", this.state.error);
-      }
-
-      if (!this.state.result.length) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "No rows to display.");
-      }
-
-      console.log(this.state.result[0]);
-      var columnNames = Object.keys(this.state.result[0]);
-      var tableHead = columnNames.map(function (columnName, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-          key: "th-" + i,
-          className: "pr-2"
-        }, columnName);
-      });
-      var tableBody = this.state.result.map(function (row, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
-          key: "tr-" + i
-        }, columnNames.map(function (columnName, j) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-            key: "td-" + i + "-" + j,
-            className: "pr-2"
-          }, row[columnName]);
-        }));
-      });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-        className: "table table-sm table-striped"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, tableHead)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, tableBody));
-    }
-  }, {
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      this.executeQuery();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      if (typeof this.state.query == "undefined") return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Query: ", this.state.query.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col query"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_syntax_highlighter__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        language: "sql",
-        style: react_syntax_highlighter_dist_esm_styles_hljs__WEBPACK_IMPORTED_MODULE_2__["brownPaper"]
-      }, this.state.query.query))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Result"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, this.renderResult())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col pb-2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        className: "btn btn-primary",
-        to: "/home"
-      }, "Home"))))));
-    }
-  }]);
-
-  return QueryExecute;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
+    };
+    QueryExecute.prototype.renderResult = function () {
+        if (this.state.error) {
+            return (React.createElement("p", null,
+                React.createElement("strong", null, "ERROR:"),
+                " ",
+                this.state.error));
+        }
+        if (!this.state.result.length) {
+            return (React.createElement("p", null, "No rows to display."));
+        }
+        var columnNames = Object.keys(this.state.result[0]);
+        var tableHead = columnNames.map(function (columnName, i) { return (React.createElement("th", { key: "th-" + i, className: "pr-2" }, columnName)); });
+        var tableBody = this.state.result.map(function (row, i) { return (React.createElement("tr", { key: "tr-" + i }, columnNames.map(function (columnName, j) { return (React.createElement("td", { key: "td-" + i + "-" + j, className: "pr-2" }, row[columnName])); }))); });
+        return (React.createElement("table", { className: "table table-sm table-striped" },
+            React.createElement("thead", null,
+                React.createElement("tr", null, tableHead)),
+            React.createElement("tbody", null, tableBody)));
+    };
+    QueryExecute.prototype.componentWillMount = function () {
+        this.executeQuery();
+    };
+    QueryExecute.prototype.render = function () {
+        if (typeof this.state.query == "undefined")
+            return React.createElement("div", null);
+        return (React.createElement("div", null,
+            React.createElement("div", { className: "row" },
+                React.createElement("div", { className: "col" },
+                    React.createElement("h1", null,
+                        "Query: ",
+                        this.state.query.name),
+                    React.createElement("div", { className: "row" },
+                        React.createElement("div", { className: "col query" },
+                            React.createElement(react_syntax_highlighter_1.default, { language: "sql", style: hljs_1.brownPaper }, this.state.query.query))),
+                    React.createElement("div", { className: "row" },
+                        React.createElement("div", { className: "col" },
+                            React.createElement("h2", null, "Result"))),
+                    React.createElement("div", { className: "row" },
+                        React.createElement("div", { className: "col" }, this.renderResult())),
+                    React.createElement("div", { className: "row" },
+                        React.createElement("div", { className: "col pb-2" },
+                            React.createElement(react_router_dom_1.Link, { className: "btn btn-primary", to: "/home" }, "Home")))))));
+    };
+    return QueryExecute;
+}(React.Component));
+exports.default = QueryExecute;
 
 
 /***/ }),
 
-/***/ "./resources/js/index.jsx":
+/***/ "./resources/js/index.tsx":
 /*!********************************!*\
-  !*** ./resources/js/index.jsx ***!
+  !*** ./resources/js/index.tsx ***!
   \********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _components_Index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Index */ "./resources/js/components/Index.jsx");
-/* harmony import */ var _components_QueryEdit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/QueryEdit */ "./resources/js/components/QueryEdit.jsx");
-/* harmony import */ var _components_QueryExecute__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/QueryExecute */ "./resources/js/components/QueryExecute.jsx");
 
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+var Index_1 = __webpack_require__(/*! ./components/Index */ "./resources/js/components/Index.tsx");
+var QueryEdit_1 = __webpack_require__(/*! ./components/QueryEdit */ "./resources/js/components/QueryEdit.tsx");
+var QueryExecute_1 = __webpack_require__(/*! ./components/QueryExecute */ "./resources/js/components/QueryExecute.tsx");
 if (document.getElementById('app-content')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    exact: true,
-    path: "/home",
-    component: _components_Index__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    exact: true,
-    path: "/add",
-    component: _components_QueryEdit__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    exact: true,
-    path: "/:id/edit",
-    component: _components_QueryEdit__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    exact: true,
-    path: "/:id/execute",
-    component: _components_QueryExecute__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    render: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Not found");
-    }
-  })))), document.getElementById('app-content'));
+    ReactDOM.render(React.createElement(react_router_dom_1.BrowserRouter, null,
+        React.createElement("div", null,
+            React.createElement(react_router_dom_1.Switch, null,
+                React.createElement(react_router_dom_1.Route, { exact: true, path: "/home", component: Index_1.default }),
+                React.createElement(react_router_dom_1.Route, { exact: true, path: "/add", component: QueryEdit_1.default }),
+                React.createElement(react_router_dom_1.Route, { exact: true, path: "/:id/edit", component: QueryEdit_1.default }),
+                React.createElement(react_router_dom_1.Route, { exact: true, path: "/:id/execute", component: QueryExecute_1.default }),
+                React.createElement(react_router_dom_1.Route, { render: function () { return React.createElement("h1", null, "Not Found"); } })))), document.getElementById('app-content'));
 }
+
 
 /***/ }),
 

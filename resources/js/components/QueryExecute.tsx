@@ -1,14 +1,43 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+import {RouteComponentProps} from 'react-router';
+import {Link} from "react-router-dom";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {brownPaper} from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import {Link} from "react-router-dom";
+import axios from 'axios';
 
-export default class QueryExecute extends Component {
+type User = {
+    name: string;
+}
+
+type Query = {
+    id: number;
+    name: string;
+    query: string;
+    user: User;
+    updated_at: string;
+}
+
+type matchParams = {
+    id: string;
+}
+
+interface Props extends RouteComponentProps<matchParams> {
+}
+
+type State = {
+    query: Query;
+    result: object[];
+    error: string;
+}
+
+export default class QueryExecute extends React.Component<Props, State> {
     constructor(props) {
         super(props);
 
         this.state = {
             query: undefined,
+            result: undefined,
+            error: undefined,
         };
 
         this.renderResult = this.renderResult.bind(this);
@@ -38,8 +67,6 @@ export default class QueryExecute extends Component {
                 <p>No rows to display.</p>
             );
         }
-
-        console.log(this.state.result[0]);
 
         let columnNames = Object.keys(this.state.result[0]);
 
