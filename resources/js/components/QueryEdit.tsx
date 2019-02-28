@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {RouteComponentProps} from 'react-router';
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 type User = {
     name: string;
@@ -127,14 +128,18 @@ export default class QueryEdit extends React.Component<Props, State> {
                                         value={this.state.query.query}
                                         className="form-control text-monospace"
                                         placeholder="SQL"
-//                                        rows="10"
-//                                        maxLength="255"
+                                        rows={10}
+                                        maxLength={255}
                                         required
                                     />
                                 </div>
-                                <button type="submit" className="btn btn-primary">
+                                <button type="submit" className="btn btn-success mr-2">
                                     Save Query
                                 </button>
+                                <Link className="btn btn-secondary" to="/home">
+                                    Cancel
+                                </Link>
+
                             </form>
                         </div>
                     </div>

@@ -25,6 +25,20 @@ class QueryController extends Controller
         $allQueries = $query->whereIn('user_id', $request->user())->with('user');
         $queries = $allQueries->orderBy('created_at', 'desc')->take(20)->get();
 
+        if ($_GET['withResults'] === 'true') {
+            $queries = $queries->map(function ($query) {
+                try {
+                    $query['result'] = DB::select($query['query']);
+                    $query['error'] = '';
+                } catch(\Illuminate\Database\QueryException $exception) {
+                    $query['result'] = [];
+                    $query['error'] = $exception->getMessage();
+                }
+
+                return $query;
+            });
+        }
+
         return response()->json([
             'queries' => $queries,
         ]);

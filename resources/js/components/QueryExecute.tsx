@@ -15,6 +15,8 @@ type Query = {
     query: string;
     user: User;
     updated_at: string;
+    result: object[];
+    error: string;
 }
 
 type matchParams = {
@@ -26,8 +28,6 @@ interface Props extends RouteComponentProps<matchParams> {
 
 type State = {
     query: Query;
-    result: object[];
-    error: string;
 }
 
 export default class QueryExecute extends React.Component<Props, State> {
@@ -36,8 +36,6 @@ export default class QueryExecute extends React.Component<Props, State> {
 
         this.state = {
             query: undefined,
-            result: undefined,
-            error: undefined,
         };
 
         this.renderResult = this.renderResult.bind(this);
@@ -46,35 +44,37 @@ export default class QueryExecute extends React.Component<Props, State> {
     executeQuery() {
         axios
             .get(`/queries/${this.props.match.params.id}/execute`)
-            .then(response =>
+            .then(response => {
+                response.data.query.error = response.data.error;
+                response.data.query.result = response.data.result;
                 this.setState({
-                    result: response.data.result,
-                    error: response.data.error,
                     query: response.data.query,
-                })
+                })}
             );
     }
 
     renderResult() {
-        if (this.state.error) {
+        const query = this.state.query;
+
+        if (query.error) {
             return (
-                <p><strong>ERROR:</strong> {this.state.error}</p>
+                <p><strong>ERROR:</strong> {query.error}</p>
             );
         }
 
-        if (!this.state.result.length) {
+        if (!query.result.length) {
             return (
                 <p>No rows to display.</p>
             );
         }
 
-        let columnNames = Object.keys(this.state.result[0]);
+        let columnNames = Object.keys(query.result[0]);
 
         const tableHead = columnNames.map((columnName, i) => (
             <th key={"th-" + i} className="pr-2">{columnName}</th>
         ));
 
-        const tableBody = this.state.result.map((row, i) => (
+        const tableBody = query.result.map((row, i) => (
             <tr key={"tr-" + i}>
                 {columnNames.map((columnName, j) => (
                     <td key={"td-" + i + "-" + j} className="pr-2">{row[columnName]}</td>

@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {brownPaper} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import axios from 'axios';
+import Chart from 'react-google-charts';
 
 type User = {
     name: string;
@@ -15,16 +16,20 @@ type Query = {
     query: string;
     user: User;
     updated_at: string;
+    result: object[];
+    error: string;
+    num_rows?: number;
+    num_columns?: number;
 }
 
-type matchParams = {
-}
+type matchParams = {}
 
 interface Props extends RouteComponentProps<matchParams> {
 }
 
 type State = {
     queries: Query[];
+    hasResults: boolean;
 }
 
 export default class Index extends React.Component<Props, State> {
@@ -33,10 +38,13 @@ export default class Index extends React.Component<Props, State> {
 
         this.state = {
             queries: undefined,
+            hasResults: undefined,
         };
 
         this.renderQueries = this.renderQueries.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.showChart = this.showChart.bind(this);
+        this.renderChart = this.renderChart.bind(this);
     }
 
     renderQueries() {
@@ -98,24 +106,108 @@ export default class Index extends React.Component<Props, State> {
         }
     }
 
-    getQueries() {
-        axios.get('/queries').then(response =>
+    getQueries(withResults = false) {
+        axios.get('/queries?withResults=' + withResults).then(response =>
             this.setState({
-                queries: [...response.data.queries]
+                queries: response.data.queries,
+                hasResults: withResults,
             })
         );
     }
 
     componentWillMount() {
-        this.getQueries();
+        this.getQueries(false);
     }
 
     handleDelete(id) {
         const isNotId = query => query.id !== id;
         const updatedQueries = this.state.queries.filter(isNotId);
+
         this.setState({queries: updatedQueries});
 
         axios.delete(`/queries/${id}`);
+    }
+
+    showChart() {
+        this.getQueries(true);
+    }
+
+    renderChart() {
+        if (!this.state.queries.length) {
+            return <div/>;
+        }
+
+        if (!this.state.hasResults) {
+            return <div/>;
+        }
+
+        let chartData = [];
+        let chartRowsData = [];
+
+        this.state.queries.forEach(function (query) {
+            if (query.error) {
+
+            } else if (!query.result.length) {
+
+            } else {
+                chartData.push([
+                    query.name,
+                    Object.keys(query.result[0]).length,
+                    query.result.length,
+                ]);
+
+                chartRowsData.push([
+                    query.name,
+                    query.result.length,
+                ]);
+            }
+        });
+
+        chartData = [['Query name', 'Number of columns', 'Number of rows'], ...chartData];
+        chartRowsData = [['Query name', 'Number of rows'], ...chartRowsData];
+
+        return <div className="row charts align-contents-between">
+            <div className="col col-7 col-bar">
+                <div>
+                    <Chart
+                        chartType={"BarChart"}
+                        data={chartData}
+                        width={"100%"}
+                        height={"350px"}
+                        options={{
+                            title: 'Number or rows and columns for each query',
+                            chartArea: {
+                                width: "50%",
+                            },
+                            hAxis: {
+                                title: "Columns / Rows",
+                                minValue: 0,
+                            },
+                            vAxis: {
+                                title: "Queries",
+                            },
+                        }}
+                    />
+                </div>
+            </div>
+            <div className="col col-5 col-pie">
+                <div>
+                    <Chart
+                        chartType={"PieChart"}
+                        data={chartRowsData}
+                        width={"100%"}
+                        height={"350px"}
+                        options={{
+                            title: "Number of rows returned by each query",
+                            chartArea: {width: "90%"},
+                            pieHole: 0.4,
+                            is3D: false,
+                        }}
+                    />
+                </div>
+            </div>
+        </div>
+
     }
 
     render() {
@@ -140,6 +232,14 @@ export default class Index extends React.Component<Props, State> {
                         {this.renderQueries()}
                     </div>
                 </div>
+                <div className="row">
+                    <div className="col pb-4">
+                        <button onClick={this.showChart} className="btn btn-primary">
+                            Generate Charts
+                        </button>
+                    </div>
+                </div>
+                {this.renderChart()}
             </div>
         );
     }

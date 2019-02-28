@@ -30,6 +30,24 @@ div.query pre {
   margin: 1em 0 !important;
 }
 
+.charts .col > div {
+  border: 1px #ccc solid;
+  overflow: hidden;
+}
+
+.charts .col > div > div {
+  position: relative;
+  top: -15px;
+  margin-bottom: -15px;
+}
+
+.charts .col-bar > div > div {
+  top: -13px;
+}
+
+.charts .col-pie>div {
+}
+
 .btn-xs {
   color: #222;
   line-height: 1.1em;
