@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {RouteComponentProps} from 'react-router';
+import axios from 'axios';
 import {Link} from 'react-router-dom';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {brownPaper} from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import axios from 'axios';
 import Chart from 'react-google-charts';
 
 type User = {

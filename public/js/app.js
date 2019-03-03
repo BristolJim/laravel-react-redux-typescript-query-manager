@@ -111719,6 +111719,24 @@ if (token) {
 
 /***/ }),
 
+/***/ "./resources/js/components/App.tsx":
+/*!*****************************************!*\
+  !*** ./resources/js/components/App.tsx ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var routes_1 = __webpack_require__(/*! ../routes */ "./resources/js/routes.tsx");
+var App = function () { return (React.createElement(routes_1.default, null)); };
+exports.default = App;
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Index.tsx":
 /*!*******************************************!*\
   !*** ./resources/js/components/Index.tsx ***!
@@ -111743,10 +111761,10 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 var react_syntax_highlighter_1 = __webpack_require__(/*! react-syntax-highlighter */ "./node_modules/react-syntax-highlighter/dist/esm/index.js");
 var hljs_1 = __webpack_require__(/*! react-syntax-highlighter/dist/esm/styles/hljs */ "./node_modules/react-syntax-highlighter/dist/esm/styles/hljs/index.js");
-var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 var react_google_charts_1 = __webpack_require__(/*! react-google-charts */ "./node_modules/react-google-charts/dist/index.esm.js");
 var Index = (function (_super) {
     __extends(Index, _super);
@@ -112027,10 +112045,10 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 var react_syntax_highlighter_1 = __webpack_require__(/*! react-syntax-highlighter */ "./node_modules/react-syntax-highlighter/dist/esm/index.js");
 var hljs_1 = __webpack_require__(/*! react-syntax-highlighter/dist/esm/styles/hljs */ "./node_modules/react-syntax-highlighter/dist/esm/styles/hljs/index.js");
-var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 var QueryExecute = (function (_super) {
     __extends(QueryExecute, _super);
     function QueryExecute(props) {
@@ -112114,21 +112132,37 @@ exports.default = QueryExecute;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+var react_dom_1 = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+var App_1 = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.tsx");
+if (document.getElementById('app-content')) {
+    react_dom_1.render(React.createElement(App_1.default, null), document.getElementById('app-content'));
+}
+
+
+/***/ }),
+
+/***/ "./resources/js/routes.tsx":
+/*!*********************************!*\
+  !*** ./resources/js/routes.tsx ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 var Index_1 = __webpack_require__(/*! ./components/Index */ "./resources/js/components/Index.tsx");
 var QueryEdit_1 = __webpack_require__(/*! ./components/QueryEdit */ "./resources/js/components/QueryEdit.tsx");
 var QueryExecute_1 = __webpack_require__(/*! ./components/QueryExecute */ "./resources/js/components/QueryExecute.tsx");
-if (document.getElementById('app-content')) {
-    ReactDOM.render(React.createElement(react_router_dom_1.BrowserRouter, null,
-        React.createElement("div", null,
-            React.createElement(react_router_dom_1.Switch, null,
-                React.createElement(react_router_dom_1.Route, { exact: true, path: "/home", component: Index_1.default }),
-                React.createElement(react_router_dom_1.Route, { exact: true, path: "/add", component: QueryEdit_1.default }),
-                React.createElement(react_router_dom_1.Route, { exact: true, path: "/:id/edit", component: QueryEdit_1.default }),
-                React.createElement(react_router_dom_1.Route, { exact: true, path: "/:id/execute", component: QueryExecute_1.default }),
-                React.createElement(react_router_dom_1.Route, { render: function () { return React.createElement("h1", null, "Not Found"); } })))), document.getElementById('app-content'));
-}
+var Routes = function () { return (React.createElement(react_router_dom_1.BrowserRouter, null,
+    React.createElement(react_router_dom_1.Switch, null,
+        React.createElement(react_router_dom_1.Route, { exact: true, path: "/home", component: Index_1.default }),
+        React.createElement(react_router_dom_1.Route, { exact: true, path: "/add", component: QueryEdit_1.default }),
+        React.createElement(react_router_dom_1.Route, { exact: true, path: "/:id/edit", component: QueryEdit_1.default }),
+        React.createElement(react_router_dom_1.Route, { exact: true, path: "/:id/execute", component: QueryExecute_1.default })))); };
+exports.default = Routes;
 
 
 /***/ }),
@@ -112151,8 +112185,8 @@ if (document.getElementById('app-content')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/jim/dev/query-manager/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/jim/dev/query-manager/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/jim/dev/laravel-react-redux-typescript-query-manager/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/jim/dev/laravel-react-redux-typescript-query-manager/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
