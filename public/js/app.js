@@ -82850,7 +82850,7 @@ var Chart = (function (_super) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.8.2
+/** @license React v16.8.3
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -99835,6 +99835,19 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/redux-logger/dist/redux-logger.js":
+/*!********************************************************!*\
+  !*** ./node_modules/redux-logger/dist/redux-logger.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {!function(e,t){ true?t(exports):undefined}(this,function(e){"use strict";function t(e,t){e.super_=t,e.prototype=Object.create(t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}})}function r(e,t){Object.defineProperty(this,"kind",{value:e,enumerable:!0}),t&&t.length&&Object.defineProperty(this,"path",{value:t,enumerable:!0})}function n(e,t,r){n.super_.call(this,"E",e),Object.defineProperty(this,"lhs",{value:t,enumerable:!0}),Object.defineProperty(this,"rhs",{value:r,enumerable:!0})}function o(e,t){o.super_.call(this,"N",e),Object.defineProperty(this,"rhs",{value:t,enumerable:!0})}function i(e,t){i.super_.call(this,"D",e),Object.defineProperty(this,"lhs",{value:t,enumerable:!0})}function a(e,t,r){a.super_.call(this,"A",e),Object.defineProperty(this,"index",{value:t,enumerable:!0}),Object.defineProperty(this,"item",{value:r,enumerable:!0})}function f(e,t,r){var n=e.slice((r||t)+1||e.length);return e.length=t<0?e.length+t:t,e.push.apply(e,n),e}function u(e){var t="undefined"==typeof e?"undefined":N(e);return"object"!==t?t:e===Math?"math":null===e?"null":Array.isArray(e)?"array":"[object Date]"===Object.prototype.toString.call(e)?"date":"function"==typeof e.toString&&/^\/.*\//.test(e.toString())?"regexp":"object"}function l(e,t,r,c,s,d,p){s=s||[],p=p||[];var g=s.slice(0);if("undefined"!=typeof d){if(c){if("function"==typeof c&&c(g,d))return;if("object"===("undefined"==typeof c?"undefined":N(c))){if(c.prefilter&&c.prefilter(g,d))return;if(c.normalize){var h=c.normalize(g,d,e,t);h&&(e=h[0],t=h[1])}}}g.push(d)}"regexp"===u(e)&&"regexp"===u(t)&&(e=e.toString(),t=t.toString());var y="undefined"==typeof e?"undefined":N(e),v="undefined"==typeof t?"undefined":N(t),b="undefined"!==y||p&&p[p.length-1].lhs&&p[p.length-1].lhs.hasOwnProperty(d),m="undefined"!==v||p&&p[p.length-1].rhs&&p[p.length-1].rhs.hasOwnProperty(d);if(!b&&m)r(new o(g,t));else if(!m&&b)r(new i(g,e));else if(u(e)!==u(t))r(new n(g,e,t));else if("date"===u(e)&&e-t!==0)r(new n(g,e,t));else if("object"===y&&null!==e&&null!==t)if(p.filter(function(t){return t.lhs===e}).length)e!==t&&r(new n(g,e,t));else{if(p.push({lhs:e,rhs:t}),Array.isArray(e)){var w;e.length;for(w=0;w<e.length;w++)w>=t.length?r(new a(g,w,new i(void 0,e[w]))):l(e[w],t[w],r,c,g,w,p);for(;w<t.length;)r(new a(g,w,new o(void 0,t[w++])))}else{var x=Object.keys(e),S=Object.keys(t);x.forEach(function(n,o){var i=S.indexOf(n);i>=0?(l(e[n],t[n],r,c,g,n,p),S=f(S,i)):l(e[n],void 0,r,c,g,n,p)}),S.forEach(function(e){l(void 0,t[e],r,c,g,e,p)})}p.length=p.length-1}else e!==t&&("number"===y&&isNaN(e)&&isNaN(t)||r(new n(g,e,t)))}function c(e,t,r,n){return n=n||[],l(e,t,function(e){e&&n.push(e)},r),n.length?n:void 0}function s(e,t,r){if(r.path&&r.path.length){var n,o=e[t],i=r.path.length-1;for(n=0;n<i;n++)o=o[r.path[n]];switch(r.kind){case"A":s(o[r.path[n]],r.index,r.item);break;case"D":delete o[r.path[n]];break;case"E":case"N":o[r.path[n]]=r.rhs}}else switch(r.kind){case"A":s(e[t],r.index,r.item);break;case"D":e=f(e,t);break;case"E":case"N":e[t]=r.rhs}return e}function d(e,t,r){if(e&&t&&r&&r.kind){for(var n=e,o=-1,i=r.path?r.path.length-1:0;++o<i;)"undefined"==typeof n[r.path[o]]&&(n[r.path[o]]="number"==typeof r.path[o]?[]:{}),n=n[r.path[o]];switch(r.kind){case"A":s(r.path?n[r.path[o]]:n,r.index,r.item);break;case"D":delete n[r.path[o]];break;case"E":case"N":n[r.path[o]]=r.rhs}}}function p(e,t,r){if(r.path&&r.path.length){var n,o=e[t],i=r.path.length-1;for(n=0;n<i;n++)o=o[r.path[n]];switch(r.kind){case"A":p(o[r.path[n]],r.index,r.item);break;case"D":o[r.path[n]]=r.lhs;break;case"E":o[r.path[n]]=r.lhs;break;case"N":delete o[r.path[n]]}}else switch(r.kind){case"A":p(e[t],r.index,r.item);break;case"D":e[t]=r.lhs;break;case"E":e[t]=r.lhs;break;case"N":e=f(e,t)}return e}function g(e,t,r){if(e&&t&&r&&r.kind){var n,o,i=e;for(o=r.path.length-1,n=0;n<o;n++)"undefined"==typeof i[r.path[n]]&&(i[r.path[n]]={}),i=i[r.path[n]];switch(r.kind){case"A":p(i[r.path[n]],r.index,r.item);break;case"D":i[r.path[n]]=r.lhs;break;case"E":i[r.path[n]]=r.lhs;break;case"N":delete i[r.path[n]]}}}function h(e,t,r){if(e&&t){var n=function(n){r&&!r(e,t,n)||d(e,t,n)};l(e,t,n)}}function y(e){return"color: "+F[e].color+"; font-weight: bold"}function v(e){var t=e.kind,r=e.path,n=e.lhs,o=e.rhs,i=e.index,a=e.item;switch(t){case"E":return[r.join("."),n,"→",o];case"N":return[r.join("."),o];case"D":return[r.join(".")];case"A":return[r.join(".")+"["+i+"]",a];default:return[]}}function b(e,t,r,n){var o=c(e,t);try{n?r.groupCollapsed("diff"):r.group("diff")}catch(e){r.log("diff")}o?o.forEach(function(e){var t=e.kind,n=v(e);r.log.apply(r,["%c "+F[t].text,y(t)].concat(P(n)))}):r.log("—— no diff ——");try{r.groupEnd()}catch(e){r.log("—— diff end —— ")}}function m(e,t,r,n){switch("undefined"==typeof e?"undefined":N(e)){case"object":return"function"==typeof e[n]?e[n].apply(e,P(r)):e[n];case"function":return e(t);default:return e}}function w(e){var t=e.timestamp,r=e.duration;return function(e,n,o){var i=["action"];return i.push("%c"+String(e.type)),t&&i.push("%c@ "+n),r&&i.push("%c(in "+o.toFixed(2)+" ms)"),i.join(" ")}}function x(e,t){var r=t.logger,n=t.actionTransformer,o=t.titleFormatter,i=void 0===o?w(t):o,a=t.collapsed,f=t.colors,u=t.level,l=t.diff,c="undefined"==typeof t.titleFormatter;e.forEach(function(o,s){var d=o.started,p=o.startedTime,g=o.action,h=o.prevState,y=o.error,v=o.took,w=o.nextState,x=e[s+1];x&&(w=x.prevState,v=x.started-d);var S=n(g),k="function"==typeof a?a(function(){return w},g,o):a,j=D(p),E=f.title?"color: "+f.title(S)+";":"",A=["color: gray; font-weight: lighter;"];A.push(E),t.timestamp&&A.push("color: gray; font-weight: lighter;"),t.duration&&A.push("color: gray; font-weight: lighter;");var O=i(S,j,v);try{k?f.title&&c?r.groupCollapsed.apply(r,["%c "+O].concat(A)):r.groupCollapsed(O):f.title&&c?r.group.apply(r,["%c "+O].concat(A)):r.group(O)}catch(e){r.log(O)}var N=m(u,S,[h],"prevState"),P=m(u,S,[S],"action"),C=m(u,S,[y,h],"error"),F=m(u,S,[w],"nextState");if(N)if(f.prevState){var L="color: "+f.prevState(h)+"; font-weight: bold";r[N]("%c prev state",L,h)}else r[N]("prev state",h);if(P)if(f.action){var T="color: "+f.action(S)+"; font-weight: bold";r[P]("%c action    ",T,S)}else r[P]("action    ",S);if(y&&C)if(f.error){var M="color: "+f.error(y,h)+"; font-weight: bold;";r[C]("%c error     ",M,y)}else r[C]("error     ",y);if(F)if(f.nextState){var _="color: "+f.nextState(w)+"; font-weight: bold";r[F]("%c next state",_,w)}else r[F]("next state",w);l&&b(h,w,r,k);try{r.groupEnd()}catch(e){r.log("—— log end ——")}})}function S(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=Object.assign({},L,e),r=t.logger,n=t.stateTransformer,o=t.errorTransformer,i=t.predicate,a=t.logErrors,f=t.diffPredicate;if("undefined"==typeof r)return function(){return function(e){return function(t){return e(t)}}};if(e.getState&&e.dispatch)return console.error("[redux-logger] redux-logger not installed. Make sure to pass logger instance as middleware:\n// Logger with default options\nimport { logger } from 'redux-logger'\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n// Or you can create your own logger with custom options http://bit.ly/redux-logger-options\nimport createLogger from 'redux-logger'\nconst logger = createLogger({\n  // ...options\n});\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n"),function(){return function(e){return function(t){return e(t)}}};var u=[];return function(e){var r=e.getState;return function(e){return function(l){if("function"==typeof i&&!i(r,l))return e(l);var c={};u.push(c),c.started=O.now(),c.startedTime=new Date,c.prevState=n(r()),c.action=l;var s=void 0;if(a)try{s=e(l)}catch(e){c.error=o(e)}else s=e(l);c.took=O.now()-c.started,c.nextState=n(r());var d=t.diff&&"function"==typeof f?f(r,l):t.diff;if(x(u,Object.assign({},t,{diff:d})),u.length=0,c.error)throw c.error;return s}}}}var k,j,E=function(e,t){return new Array(t+1).join(e)},A=function(e,t){return E("0",t-e.toString().length)+e},D=function(e){return A(e.getHours(),2)+":"+A(e.getMinutes(),2)+":"+A(e.getSeconds(),2)+"."+A(e.getMilliseconds(),3)},O="undefined"!=typeof performance&&null!==performance&&"function"==typeof performance.now?performance:Date,N="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},P=function(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)},C=[];k="object"===("undefined"==typeof global?"undefined":N(global))&&global?global:"undefined"!=typeof window?window:{},j=k.DeepDiff,j&&C.push(function(){"undefined"!=typeof j&&k.DeepDiff===c&&(k.DeepDiff=j,j=void 0)}),t(n,r),t(o,r),t(i,r),t(a,r),Object.defineProperties(c,{diff:{value:c,enumerable:!0},observableDiff:{value:l,enumerable:!0},applyDiff:{value:h,enumerable:!0},applyChange:{value:d,enumerable:!0},revertChange:{value:g,enumerable:!0},isConflict:{value:function(){return"undefined"!=typeof j},enumerable:!0},noConflict:{value:function(){return C&&(C.forEach(function(e){e()}),C=null),c},enumerable:!0}});var F={E:{color:"#2196F3",text:"CHANGED:"},N:{color:"#4CAF50",text:"ADDED:"},D:{color:"#F44336",text:"DELETED:"},A:{color:"#2196F3",text:"ARRAY:"}},L={level:"log",logger:console,logErrors:!0,collapsed:void 0,predicate:void 0,duration:!1,timestamp:!0,stateTransformer:function(e){return e},actionTransformer:function(e){return e},errorTransformer:function(e){return e},colors:{title:function(){return"inherit"},prevState:function(){return"#9E9E9E"},action:function(){return"#03A9F4"},nextState:function(){return"#4CAF50"},error:function(){return"#F20404"}},diff:!1,diffPredicate:void 0,transformer:void 0},T=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.dispatch,r=e.getState;return"function"==typeof t||"function"==typeof r?S()({dispatch:t,getState:r}):void console.error("\n[redux-logger v3] BREAKING CHANGE\n[redux-logger v3] Since 3.0.0 redux-logger exports by default logger with default settings.\n[redux-logger v3] Change\n[redux-logger v3] import createLogger from 'redux-logger'\n[redux-logger v3] to\n[redux-logger v3] import { createLogger } from 'redux-logger'\n")};e.defaults=L,e.createLogger=S,e.logger=T,e.default=T,Object.defineProperty(e,"__esModule",{value:!0})});
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
 /***/ "./node_modules/redux/es/redux.js":
 /*!****************************************!*\
   !*** ./node_modules/redux/es/redux.js ***!
@@ -113563,44 +113576,36 @@ function extend() {
 
 /***/ }),
 
-/***/ "./resources/js/actions/index.js":
+/***/ "./resources/js/actions/index.ts":
 /*!***************************************!*\
-  !*** ./resources/js/actions/index.js ***!
+  !*** ./resources/js/actions/index.ts ***!
   \***************************************/
-/*! exports provided: addTodo, setVisibilityFilter, toggleTodo, VisibilityFilters */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addTodo", function() { return addTodo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setVisibilityFilter", function() { return setVisibilityFilter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleTodo", function() { return toggleTodo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VisibilityFilters", function() { return VisibilityFilters; });
+
+Object.defineProperty(exports, "__esModule", { value: true });
 var nextTodoId = 0;
-var addTodo = function addTodo(text) {
-  return {
+exports.addTodo = function (text) { return ({
     type: 'ADD_TODO',
     id: nextTodoId++,
     text: text
-  };
-};
-var setVisibilityFilter = function setVisibilityFilter(filter) {
-  return {
+}); };
+exports.setVisibilityFilter = function (filter) { return ({
     type: 'SET_VISIBILITY_FILTER',
     filter: filter
-  };
-};
-var toggleTodo = function toggleTodo(id) {
-  return {
+}); };
+exports.toggleTodo = function (id) { return ({
     type: 'TOGGLE_TODO',
     id: id
-  };
+}); };
+exports.VisibilityFilters = {
+    SHOW_ALL: 'SHOW_ALL',
+    SHOW_COMPLETED: 'SHOW_COMPLETED',
+    SHOW_ACTIVE: 'SHOW_ACTIVE'
 };
-var VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
-};
+
 
 /***/ }),
 
@@ -113698,9 +113703,9 @@ if (token) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var routes_1 = __webpack_require__(/*! ../routes */ "./resources/js/routes.tsx");
-var Footer_1 = __webpack_require__(/*! ./Footer */ "./resources/js/components/Footer.js");
-var AddTodo_1 = __webpack_require__(/*! ../containers/AddTodo */ "./resources/js/containers/AddTodo.js");
-var VisibleTodoList_1 = __webpack_require__(/*! ../containers/VisibleTodoList */ "./resources/js/containers/VisibleTodoList.js");
+var Footer_1 = __webpack_require__(/*! ./Footer */ "./resources/js/components/Footer.tsx");
+var AddTodo_1 = __webpack_require__(/*! ../containers/AddTodo */ "./resources/js/containers/AddTodo.tsx");
+var VisibleTodoList_1 = __webpack_require__(/*! ../containers/VisibleTodoList */ "./resources/js/containers/VisibleTodoList.ts");
 var App = function () { return (React.createElement(React.Fragment, null,
     React.createElement(routes_1.default, null),
     React.createElement(AddTodo_1.default, null),
@@ -113711,34 +113716,26 @@ exports.default = App;
 
 /***/ }),
 
-/***/ "./resources/js/components/Footer.js":
-/*!*******************************************!*\
-  !*** ./resources/js/components/Footer.js ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./resources/js/components/Footer.tsx":
+/*!********************************************!*\
+  !*** ./resources/js/components/Footer.tsx ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _containers_FilterLink__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../containers/FilterLink */ "./resources/js/containers/FilterLink.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.js");
 
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var FilterLink_1 = __webpack_require__(/*! ../containers/FilterLink */ "./resources/js/containers/FilterLink.ts");
+var actions_1 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
+var Footer = function () { return (React.createElement("div", null,
+    React.createElement("span", null, "Show: "),
+    React.createElement(FilterLink_1.default, { filter: actions_1.VisibilityFilters.SHOW_ALL }, "All"),
+    React.createElement(FilterLink_1.default, { filter: actions_1.VisibilityFilters.SHOW_ACTIVE }, "Active"),
+    React.createElement(FilterLink_1.default, { filter: actions_1.VisibilityFilters.SHOW_COMPLETED }, "Completed"))); };
+exports.default = Footer;
 
-
-
-var Footer = function Footer() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Show: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_FilterLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    filter: _actions__WEBPACK_IMPORTED_MODULE_2__["VisibilityFilters"].SHOW_ALL
-  }, "All"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_FilterLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    filter: _actions__WEBPACK_IMPORTED_MODULE_2__["VisibilityFilters"].SHOW_ACTIVE
-  }, "Active"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_FilterLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    filter: _actions__WEBPACK_IMPORTED_MODULE_2__["VisibilityFilters"].SHOW_COMPLETED
-  }, "Completed"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Footer);
 
 /***/ }),
 
@@ -113911,41 +113908,31 @@ exports.default = Index;
 
 /***/ }),
 
-/***/ "./resources/js/components/Link.js":
-/*!*****************************************!*\
-  !*** ./resources/js/components/Link.js ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./resources/js/components/Link.tsx":
+/*!******************************************!*\
+  !*** ./resources/js/components/Link.tsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 
-
-
-var Link = function Link(_ref) {
-  var active = _ref.active,
-      children = _ref.children,
-      onClick = _ref.onClick;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: onClick,
-    disabled: active,
-    style: {
-      marginLeft: '4px'
-    }
-  }, children);
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+var Link = function (_a) {
+    var active = _a.active, children = _a.children, onClick = _a.onClick;
+    return (React.createElement("button", { onClick: onClick, disabled: active, style: {
+            marginLeft: '4px',
+        } }, children));
 };
-
 Link.propTypes = {
-  active: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
-  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node.isRequired,
-  onClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+    active: PropTypes.bool.isRequired,
+    children: PropTypes.node.isRequired,
+    onClick: PropTypes.func.isRequired
 };
-/* harmony default export */ __webpack_exports__["default"] = (Link);
+exports.default = Link;
+
 
 /***/ }),
 
@@ -114164,219 +114151,168 @@ exports.default = QueryExecute;
 
 /***/ }),
 
-/***/ "./resources/js/components/Todo.js":
-/*!*****************************************!*\
-  !*** ./resources/js/components/Todo.js ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./resources/js/components/Todo.tsx":
+/*!******************************************!*\
+  !*** ./resources/js/components/Todo.tsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 
-
-
-var Todo = function Todo(_ref) {
-  var onClick = _ref.onClick,
-      completed = _ref.completed,
-      text = _ref.text;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    onClick: onClick,
-    style: {
-      textDecoration: completed ? 'line-through' : 'none'
-    }
-  }, text);
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+var Todo = function (_a) {
+    var onClick = _a.onClick, completed = _a.completed, text = _a.text;
+    return (React.createElement("li", { onClick: onClick, style: {
+            textDecoration: completed ? 'line-through' : 'none'
+        } }, text));
 };
-
 Todo.propTypes = {
-  onClick: prop_types__WEBPACK_IMPORTED_MODULE_1__["func"].isRequired,
-  completed: prop_types__WEBPACK_IMPORTED_MODULE_1__["bool"].isRequired,
-  text: prop_types__WEBPACK_IMPORTED_MODULE_1__["string"].isRequired
+    onClick: PropTypes.func.isRequired,
+    completed: PropTypes.bool.isRequired,
+    text: PropTypes.string.isRequired
 };
-/* harmony default export */ __webpack_exports__["default"] = (Todo);
+exports.default = Todo;
+
 
 /***/ }),
 
-/***/ "./resources/js/components/TodoList.js":
-/*!*********************************************!*\
-  !*** ./resources/js/components/TodoList.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./resources/js/components/TodoList.tsx":
+/*!**********************************************!*\
+  !*** ./resources/js/components/TodoList.tsx ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Todo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Todo */ "./resources/js/components/Todo.js");
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-
-
-
-
-var TodoList = function TodoList(_ref) {
-  var todos = _ref.todos,
-      toggleTodo = _ref.toggleTodo;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, todos.map(function (todo) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Todo__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({
-      key: todo.id
-    }, todo, {
-      onClick: function onClick() {
-        return toggleTodo(todo.id);
-      }
-    }));
-  }));
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+var Todo_1 = __webpack_require__(/*! ./Todo */ "./resources/js/components/Todo.tsx");
+var TodoList = function (_a) {
+    var todos = _a.todos, toggleTodo = _a.toggleTodo;
+    return (React.createElement("ul", null, todos.map(function (todo) {
+        return React.createElement(Todo_1.default, __assign({ key: todo.id }, todo, { onClick: function () { return toggleTodo(todo.id); } }));
+    })));
+};
 TodoList.propTypes = {
-  todos: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
-    id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-    completed: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
-    text: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
-  }).isRequired).isRequired,
-  toggleTodo: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+    todos: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        completed: PropTypes.bool.isRequired,
+        text: PropTypes.string.isRequired
+    }).isRequired).isRequired,
+    toggleTodo: PropTypes.func.isRequired
 };
-/* harmony default export */ __webpack_exports__["default"] = (TodoList);
+exports.default = TodoList;
+
 
 /***/ }),
 
-/***/ "./resources/js/containers/AddTodo.js":
-/*!********************************************!*\
-  !*** ./resources/js/containers/AddTodo.js ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./resources/js/containers/AddTodo.tsx":
+/*!*********************************************!*\
+  !*** ./resources/js/containers/AddTodo.tsx ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.js");
 
-
-
-
-var AddTodo = function AddTodo(_ref) {
-  var dispatch = _ref.dispatch;
-  var input;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    onSubmit: function onSubmit(e) {
-      e.preventDefault();
-
-      if (!input.value.trim()) {
-        return;
-      }
-
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_2__["addTodo"])(input.value));
-      input.value = '';
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    ref: function ref(node) {
-      return input = node;
-    }
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "submit"
-  }, "Add Todo")));
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+var actions_1 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
+var AddTodo = function (_a) {
+    var dispatch = _a.dispatch;
+    var input;
+    return (React.createElement("div", null,
+        React.createElement("form", { onSubmit: function (e) {
+                e.preventDefault();
+                if (!input.value.trim()) {
+                    return;
+                }
+                dispatch(actions_1.addTodo(input.value));
+                input.value = '';
+            } },
+            React.createElement("input", { ref: function (node) { return input = node; } }),
+            React.createElement("button", { type: "submit" }, "Add Todo"))));
 };
+exports.default = react_redux_1.connect()(AddTodo);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])()(AddTodo));
 
 /***/ }),
 
-/***/ "./resources/js/containers/FilterLink.js":
+/***/ "./resources/js/containers/FilterLink.ts":
 /*!***********************************************!*\
-  !*** ./resources/js/containers/FilterLink.js ***!
+  !*** ./resources/js/containers/FilterLink.ts ***!
   \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.js");
-/* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Link */ "./resources/js/components/Link.js");
 
-
-
-
-var mapStateToProps = function mapStateToProps(state, ownProps) {
-  return {
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+var actions_1 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
+var Link_1 = __webpack_require__(/*! ../components/Link */ "./resources/js/components/Link.tsx");
+var mapStateToProps = function (state, ownProps) { return ({
     active: ownProps.filter === state.visibilityFilter
-  };
-};
+}); };
+var mapDispatchToProps = function (dispatch, ownProps) { return ({
+    onClick: function () { return dispatch(actions_1.setVisibilityFilter(ownProps.filter)); }
+}); };
+exports.default = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(Link_1.default);
 
-var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
-  return {
-    onClick: function onClick() {
-      return dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_1__["setVisibilityFilter"])(ownProps.filter));
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_components_Link__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
-/***/ "./resources/js/containers/VisibleTodoList.js":
+/***/ "./resources/js/containers/VisibleTodoList.ts":
 /*!****************************************************!*\
-  !*** ./resources/js/containers/VisibleTodoList.js ***!
+  !*** ./resources/js/containers/VisibleTodoList.ts ***!
   \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.js");
-/* harmony import */ var _components_TodoList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/TodoList */ "./resources/js/components/TodoList.js");
 
-
-
-
-
-var getVisibleTodos = function getVisibleTodos(todos, filter) {
-  switch (filter) {
-    case _actions__WEBPACK_IMPORTED_MODULE_1__["VisibilityFilters"].SHOW_ALL:
-      return todos;
-
-    case _actions__WEBPACK_IMPORTED_MODULE_1__["VisibilityFilters"].SHOW_COMPLETED:
-      return todos.filter(function (t) {
-        return t.completed;
-      });
-
-    case _actions__WEBPACK_IMPORTED_MODULE_1__["VisibilityFilters"].SHOW_ACTIVE:
-      return todos.filter(function (t) {
-        return !t.completed;
-      });
-
-    default:
-      throw new Error('Unknown filter: ' + filter);
-  }
-};
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    todos: getVisibleTodos(state.todos, state.visibilityFilter)
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    toggleTodo: function toggleTodo(id) {
-      return dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_1__["toggleTodo"])(id));
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+var actions_1 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
+var TodoList_1 = __webpack_require__(/*! ../components/TodoList */ "./resources/js/components/TodoList.tsx");
+var actions_2 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
+var getVisibleTodos = function (todos, filter) {
+    switch (filter) {
+        case actions_2.VisibilityFilters.SHOW_ALL:
+            return todos;
+        case actions_2.VisibilityFilters.SHOW_COMPLETED:
+            return todos.filter(function (t) { return t.completed; });
+        case actions_2.VisibilityFilters.SHOW_ACTIVE:
+            return todos.filter(function (t) { return !t.completed; });
+        default:
+            throw new Error('Unknown filter: ' + filter);
     }
-  };
 };
+var mapStateToProps = function (state) { return ({
+    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+}); };
+var mapDispatchToProps = function (dispatch) { return ({
+    toggleTodo: function (id) { return dispatch(actions_1.toggleTodo(id)); }
+}); };
+exports.default = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(TodoList_1.default);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_components_TodoList__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -114392,117 +114328,107 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var react_dom_1 = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var redux_1 = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+var store_1 = __webpack_require__(/*! ./store */ "./resources/js/store/index.ts");
 var App_1 = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.tsx");
-var reducers_1 = __webpack_require__(/*! ./reducers */ "./resources/js/reducers/index.js");
 var rootElement = document.getElementById('app-content');
-var store = redux_1.createStore(reducers_1.default);
 if (rootElement) {
-    react_dom_1.render(React.createElement(react_redux_1.Provider, { store: store },
+    react_dom_1.render(React.createElement(react_redux_1.Provider, { store: store_1.default },
         React.createElement(App_1.default, null)), rootElement);
 }
 
 
 /***/ }),
 
-/***/ "./resources/js/reducers/index.js":
+/***/ "./resources/js/reducers/index.ts":
 /*!****************************************!*\
-  !*** ./resources/js/reducers/index.js ***!
+  !*** ./resources/js/reducers/index.ts ***!
   \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _todos__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todos */ "./resources/js/reducers/todos.js");
-/* harmony import */ var _visibilityFilter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./visibilityFilter */ "./resources/js/reducers/visibilityFilter.js");
 
+Object.defineProperty(exports, "__esModule", { value: true });
+var redux_1 = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+var todos_1 = __webpack_require__(/*! ./todos */ "./resources/js/reducers/todos.ts");
+var visibilityFilter_1 = __webpack_require__(/*! ./visibilityFilter */ "./resources/js/reducers/visibilityFilter.ts");
+exports.default = redux_1.combineReducers({
+    todos: todos_1.default,
+    visibilityFilter: visibilityFilter_1.default
+});
 
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  todos: _todos__WEBPACK_IMPORTED_MODULE_1__["default"],
-  visibilityFilter: _visibilityFilter__WEBPACK_IMPORTED_MODULE_2__["default"]
-}));
 
 /***/ }),
 
-/***/ "./resources/js/reducers/todos.js":
+/***/ "./resources/js/reducers/todos.ts":
 /*!****************************************!*\
-  !*** ./resources/js/reducers/todos.js ***!
+  !*** ./resources/js/reducers/todos.ts ***!
   \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-var todos = function todos() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case 'ADD_TODO':
-      return [].concat(_toConsumableArray(state), [{
-        id: action.id,
-        text: action.text,
-        completed: false
-      }]);
-
-    case 'TOGGLE_TODO':
-      return state.map(function (todo) {
-        return todo.id === action.id ? _objectSpread({}, todo, {
-          completed: !todo.completed
-        }) : todo;
-      });
-
-    default:
-      return state;
-  }
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+var todos = function (state, action) {
+    if (state === void 0) { state = []; }
+    switch (action.type) {
+        case 'ADD_TODO':
+            return state.concat([
+                {
+                    id: action.id,
+                    text: action.text,
+                    completed: false
+                }
+            ]);
+        case 'TOGGLE_TODO':
+            return state.map(function (todo) {
+                return (todo.id === action.id)
+                    ? __assign({}, todo, { completed: !todo.completed }) : todo;
+            });
+        default:
+            return state;
+    }
+};
+exports.default = todos;
 
-/* harmony default export */ __webpack_exports__["default"] = (todos);
 
 /***/ }),
 
-/***/ "./resources/js/reducers/visibilityFilter.js":
+/***/ "./resources/js/reducers/visibilityFilter.ts":
 /*!***************************************************!*\
-  !*** ./resources/js/reducers/visibilityFilter.js ***!
+  !*** ./resources/js/reducers/visibilityFilter.ts ***!
   \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.js");
 
-
-var visibilityFilter = function visibilityFilter() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _actions__WEBPACK_IMPORTED_MODULE_0__["VisibilityFilters"].SHOW_ALL;
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case 'SET_VISIBILITY_FILTER':
-      return action.filter;
-
-    default:
-      return state;
-  }
+Object.defineProperty(exports, "__esModule", { value: true });
+var actions_1 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
+var visibilityFilter = function (state, action) {
+    if (state === void 0) { state = actions_1.VisibilityFilters.SHOW_ALL; }
+    switch (action.type) {
+        case 'SET_VISIBILITY_FILTER':
+            return action.filter;
+        default:
+            return state;
+    }
 };
+exports.default = visibilityFilter;
 
-/* harmony default export */ __webpack_exports__["default"] = (visibilityFilter);
 
 /***/ }),
 
@@ -114532,6 +114458,25 @@ exports.default = Routes;
 
 /***/ }),
 
+/***/ "./resources/js/store/index.ts":
+/*!*************************************!*\
+  !*** ./resources/js/store/index.ts ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var redux_logger_1 = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js");
+var redux_1 = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+var reducers_1 = __webpack_require__(/*! ../reducers */ "./resources/js/reducers/index.ts");
+var store = redux_1.createStore(reducers_1.default, redux_1.applyMiddleware(redux_logger_1.default));
+exports.default = store;
+
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -114550,8 +114495,8 @@ exports.default = Routes;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/jim/dev/laravel-react-redux-typescript-query-manager/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/jim/dev/laravel-react-redux-typescript-query-manager/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/jim/dev/query-manager-typescript-redux/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/jim/dev/query-manager-typescript-redux/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
