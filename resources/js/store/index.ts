@@ -1,15 +1,8 @@
-import logger from 'redux-logger'
-import { createStore, applyMiddleware } from 'redux'
+import { configureStore } from 'redux-starter-kit'
 import rootReducer from '../reducers'
 
-/*
- * We're giving State interface to create store
- * store is type of State defined in our reducers
- */
-const store = createStore(
-    rootReducer,
-//    initialState,
-    applyMiddleware(logger)
-);
+const store = configureStore({
+    reducer: rootReducer
+});
 
 export default store
