@@ -113576,10 +113576,10 @@ function extend() {
 
 /***/ }),
 
-/***/ "./resources/js/actions/index.ts":
-/*!***************************************!*\
-  !*** ./resources/js/actions/index.ts ***!
-  \***************************************/
+/***/ "./resources/js/actions/todos/index.ts":
+/*!*********************************************!*\
+  !*** ./resources/js/actions/todos/index.ts ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -113703,38 +113703,15 @@ if (token) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var routes_1 = __webpack_require__(/*! ../routes */ "./resources/js/routes.tsx");
-var Footer_1 = __webpack_require__(/*! ./Footer */ "./resources/js/components/Footer.tsx");
-var AddTodo_1 = __webpack_require__(/*! ../containers/AddTodo */ "./resources/js/containers/AddTodo.tsx");
-var VisibleTodoList_1 = __webpack_require__(/*! ../containers/VisibleTodoList */ "./resources/js/containers/VisibleTodoList.ts");
+var Footer_1 = __webpack_require__(/*! ./todos/Footer */ "./resources/js/components/todos/Footer.tsx");
+var AddTodo_1 = __webpack_require__(/*! ../containers/todos/AddTodo */ "./resources/js/containers/todos/AddTodo.tsx");
+var VisibleTodoList_1 = __webpack_require__(/*! ../containers/todos/VisibleTodoList */ "./resources/js/containers/todos/VisibleTodoList.ts");
 var App = function () { return (React.createElement(React.Fragment, null,
     React.createElement(routes_1.default, null),
     React.createElement(AddTodo_1.default, null),
     React.createElement(VisibleTodoList_1.default, null),
     React.createElement(Footer_1.default, null))); };
 exports.default = App;
-
-
-/***/ }),
-
-/***/ "./resources/js/components/Footer.tsx":
-/*!********************************************!*\
-  !*** ./resources/js/components/Footer.tsx ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var FilterLink_1 = __webpack_require__(/*! ../containers/FilterLink */ "./resources/js/containers/FilterLink.ts");
-var actions_1 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
-var Footer = function () { return (React.createElement("div", null,
-    React.createElement("span", null, "Show: "),
-    React.createElement(FilterLink_1.default, { filter: actions_1.VisibilityFilters.SHOW_ALL }, "All"),
-    React.createElement(FilterLink_1.default, { filter: actions_1.VisibilityFilters.SHOW_ACTIVE }, "Active"),
-    React.createElement(FilterLink_1.default, { filter: actions_1.VisibilityFilters.SHOW_COMPLETED }, "Completed"))); };
-exports.default = Footer;
 
 
 /***/ }),
@@ -113904,34 +113881,6 @@ var Index = (function (_super) {
     return Index;
 }(React.Component));
 exports.default = Index;
-
-
-/***/ }),
-
-/***/ "./resources/js/components/Link.tsx":
-/*!******************************************!*\
-  !*** ./resources/js/components/Link.tsx ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-var Link = function (_a) {
-    var active = _a.active, children = _a.children, onClick = _a.onClick;
-    return (React.createElement("button", { onClick: onClick, disabled: active, style: {
-            marginLeft: '4px',
-        } }, children));
-};
-Link.propTypes = {
-    active: PropTypes.bool.isRequired,
-    children: PropTypes.node.isRequired,
-    onClick: PropTypes.func.isRequired
-};
-exports.default = Link;
 
 
 /***/ }),
@@ -114151,10 +114100,61 @@ exports.default = QueryExecute;
 
 /***/ }),
 
-/***/ "./resources/js/components/Todo.tsx":
-/*!******************************************!*\
-  !*** ./resources/js/components/Todo.tsx ***!
-  \******************************************/
+/***/ "./resources/js/components/todos/Footer.tsx":
+/*!**************************************************!*\
+  !*** ./resources/js/components/todos/Footer.tsx ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var FilterLink_1 = __webpack_require__(/*! ../../containers/todos/FilterLink */ "./resources/js/containers/todos/FilterLink.ts");
+var todos_1 = __webpack_require__(/*! ../../actions/todos */ "./resources/js/actions/todos/index.ts");
+var Footer = function () { return (React.createElement("div", null,
+    React.createElement("span", null, "Show: "),
+    React.createElement(FilterLink_1.default, { filter: todos_1.VisibilityFilters.SHOW_ALL }, "All"),
+    React.createElement(FilterLink_1.default, { filter: todos_1.VisibilityFilters.SHOW_ACTIVE }, "Active"),
+    React.createElement(FilterLink_1.default, { filter: todos_1.VisibilityFilters.SHOW_COMPLETED }, "Completed"))); };
+exports.default = Footer;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/todos/Link.tsx":
+/*!************************************************!*\
+  !*** ./resources/js/components/todos/Link.tsx ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+var Link = function (_a) {
+    var active = _a.active, children = _a.children, onClick = _a.onClick;
+    return (React.createElement("button", { onClick: onClick, disabled: active, style: {
+            marginLeft: '4px',
+        } }, children));
+};
+Link.propTypes = {
+    active: PropTypes.bool.isRequired,
+    children: PropTypes.node.isRequired,
+    onClick: PropTypes.func.isRequired
+};
+exports.default = Link;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/todos/Todo.tsx":
+/*!************************************************!*\
+  !*** ./resources/js/components/todos/Todo.tsx ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -114179,10 +114179,10 @@ exports.default = Todo;
 
 /***/ }),
 
-/***/ "./resources/js/components/TodoList.tsx":
-/*!**********************************************!*\
-  !*** ./resources/js/components/TodoList.tsx ***!
-  \**********************************************/
+/***/ "./resources/js/components/todos/TodoList.tsx":
+/*!****************************************************!*\
+  !*** ./resources/js/components/todos/TodoList.tsx ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -114202,7 +114202,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-var Todo_1 = __webpack_require__(/*! ./Todo */ "./resources/js/components/Todo.tsx");
+var Todo_1 = __webpack_require__(/*! ./Todo */ "./resources/js/components/todos/Todo.tsx");
 var TodoList = function (_a) {
     var todos = _a.todos, toggleTodo = _a.toggleTodo;
     return (React.createElement("ul", null, todos.map(function (todo) {
@@ -114222,10 +114222,10 @@ exports.default = TodoList;
 
 /***/ }),
 
-/***/ "./resources/js/containers/AddTodo.tsx":
-/*!*********************************************!*\
-  !*** ./resources/js/containers/AddTodo.tsx ***!
-  \*********************************************/
+/***/ "./resources/js/containers/todos/AddTodo.tsx":
+/*!***************************************************!*\
+  !*** ./resources/js/containers/todos/AddTodo.tsx ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -114234,7 +114234,7 @@ exports.default = TodoList;
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var actions_1 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
+var todos_1 = __webpack_require__(/*! ../../actions/todos */ "./resources/js/actions/todos/index.ts");
 var AddTodo = function (_a) {
     var dispatch = _a.dispatch;
     var input;
@@ -114244,7 +114244,7 @@ var AddTodo = function (_a) {
                 if (!input.value.trim()) {
                     return;
                 }
-                dispatch(actions_1.addTodo(input.value));
+                dispatch(todos_1.addTodo(input.value));
                 input.value = '';
             } },
             React.createElement("input", { ref: function (node) { return input = node; } }),
@@ -114255,10 +114255,10 @@ exports.default = react_redux_1.connect()(AddTodo);
 
 /***/ }),
 
-/***/ "./resources/js/containers/FilterLink.ts":
-/*!***********************************************!*\
-  !*** ./resources/js/containers/FilterLink.ts ***!
-  \***********************************************/
+/***/ "./resources/js/containers/todos/FilterLink.ts":
+/*!*****************************************************!*\
+  !*** ./resources/js/containers/todos/FilterLink.ts ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -114266,23 +114266,23 @@ exports.default = react_redux_1.connect()(AddTodo);
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var actions_1 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
-var Link_1 = __webpack_require__(/*! ../components/Link */ "./resources/js/components/Link.tsx");
+var todos_1 = __webpack_require__(/*! ../../actions/todos */ "./resources/js/actions/todos/index.ts");
+var Link_1 = __webpack_require__(/*! ../../components/todos/Link */ "./resources/js/components/todos/Link.tsx");
 var mapStateToProps = function (state, ownProps) { return ({
     active: ownProps.filter === state.visibilityFilter
 }); };
 var mapDispatchToProps = function (dispatch, ownProps) { return ({
-    onClick: function () { return dispatch(actions_1.setVisibilityFilter(ownProps.filter)); }
+    onClick: function () { return dispatch(todos_1.setVisibilityFilter(ownProps.filter)); }
 }); };
 exports.default = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(Link_1.default);
 
 
 /***/ }),
 
-/***/ "./resources/js/containers/VisibleTodoList.ts":
-/*!****************************************************!*\
-  !*** ./resources/js/containers/VisibleTodoList.ts ***!
-  \****************************************************/
+/***/ "./resources/js/containers/todos/VisibleTodoList.ts":
+/*!**********************************************************!*\
+  !*** ./resources/js/containers/todos/VisibleTodoList.ts ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -114290,16 +114290,16 @@ exports.default = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(Lin
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var actions_1 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
-var TodoList_1 = __webpack_require__(/*! ../components/TodoList */ "./resources/js/components/TodoList.tsx");
-var actions_2 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
+var todos_1 = __webpack_require__(/*! ../../actions/todos */ "./resources/js/actions/todos/index.ts");
+var TodoList_1 = __webpack_require__(/*! ../../components/todos/TodoList */ "./resources/js/components/todos/TodoList.tsx");
+var todos_2 = __webpack_require__(/*! ../../actions/todos */ "./resources/js/actions/todos/index.ts");
 var getVisibleTodos = function (todos, filter) {
     switch (filter) {
-        case actions_2.VisibilityFilters.SHOW_ALL:
+        case todos_2.VisibilityFilters.SHOW_ALL:
             return todos;
-        case actions_2.VisibilityFilters.SHOW_COMPLETED:
+        case todos_2.VisibilityFilters.SHOW_COMPLETED:
             return todos.filter(function (t) { return t.completed; });
-        case actions_2.VisibilityFilters.SHOW_ACTIVE:
+        case todos_2.VisibilityFilters.SHOW_ACTIVE:
             return todos.filter(function (t) { return !t.completed; });
         default:
             throw new Error('Unknown filter: ' + filter);
@@ -114309,7 +114309,7 @@ var mapStateToProps = function (state) { return ({
     todos: getVisibleTodos(state.todos, state.visibilityFilter)
 }); };
 var mapDispatchToProps = function (dispatch) { return ({
-    toggleTodo: function (id) { return dispatch(actions_1.toggleTodo(id)); }
+    toggleTodo: function (id) { return dispatch(todos_1.toggleTodo(id)); }
 }); };
 exports.default = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(TodoList_1.default);
 
@@ -114351,8 +114351,8 @@ if (rootElement) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var redux_1 = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-var todos_1 = __webpack_require__(/*! ./todos */ "./resources/js/reducers/todos.ts");
-var visibilityFilter_1 = __webpack_require__(/*! ./visibilityFilter */ "./resources/js/reducers/visibilityFilter.ts");
+var todos_1 = __webpack_require__(/*! ./todos/todos */ "./resources/js/reducers/todos/todos.ts");
+var visibilityFilter_1 = __webpack_require__(/*! ./todos/visibilityFilter */ "./resources/js/reducers/todos/visibilityFilter.ts");
 exports.default = redux_1.combineReducers({
     todos: todos_1.default,
     visibilityFilter: visibilityFilter_1.default
@@ -114361,10 +114361,10 @@ exports.default = redux_1.combineReducers({
 
 /***/ }),
 
-/***/ "./resources/js/reducers/todos.ts":
-/*!****************************************!*\
-  !*** ./resources/js/reducers/todos.ts ***!
-  \****************************************/
+/***/ "./resources/js/reducers/todos/todos.ts":
+/*!**********************************************!*\
+  !*** ./resources/js/reducers/todos/todos.ts ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -114407,19 +114407,19 @@ exports.default = todos;
 
 /***/ }),
 
-/***/ "./resources/js/reducers/visibilityFilter.ts":
-/*!***************************************************!*\
-  !*** ./resources/js/reducers/visibilityFilter.ts ***!
-  \***************************************************/
+/***/ "./resources/js/reducers/todos/visibilityFilter.ts":
+/*!*********************************************************!*\
+  !*** ./resources/js/reducers/todos/visibilityFilter.ts ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var actions_1 = __webpack_require__(/*! ../actions */ "./resources/js/actions/index.ts");
+var todos_1 = __webpack_require__(/*! ../../actions/todos */ "./resources/js/actions/todos/index.ts");
 var visibilityFilter = function (state, action) {
-    if (state === void 0) { state = actions_1.VisibilityFilters.SHOW_ALL; }
+    if (state === void 0) { state = todos_1.VisibilityFilters.SHOW_ALL; }
     switch (action.type) {
         case 'SET_VISIBILITY_FILTER':
             return action.filter;
