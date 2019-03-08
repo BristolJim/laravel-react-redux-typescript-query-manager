@@ -1,25 +1,25 @@
-import * as React from 'react';
-import {RouteComponentProps} from 'react-router';
-import axios from 'axios';
-import {Link} from 'react-router-dom';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import {brownPaper} from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import Chart from 'react-google-charts';
+import * as React from 'react'
+import {RouteComponentProps} from 'react-router'
+import axios from 'axios'
+import {Link} from 'react-router-dom'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import {brownPaper} from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import Chart from 'react-google-charts'
 
 type User = {
-    name: string;
+    name: string
 }
 
 type Query = {
-    id: number;
-    name: string;
-    query: string;
-    user: User;
-    updated_at: string;
-    result: object[];
-    error: string;
-    num_rows?: number;
-    num_columns?: number;
+    id: number
+    name: string
+    query: string
+    user: User
+    updated_at: string
+    result: object[]
+    error: string
+    num_rows?: number
+    num_columns?: number
 }
 
 type matchParams = {}
@@ -28,8 +28,8 @@ interface Props extends RouteComponentProps<matchParams> {
 }
 
 type State = {
-    queries: Query[];
-    hasResults: boolean;
+    queries: Query[]
+    hasResults: boolean
 }
 
 export default class Index extends React.Component<Props, State> {
@@ -44,7 +44,7 @@ export default class Index extends React.Component<Props, State> {
         this.renderQueries = this.renderQueries.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
         this.showChart = this.showChart.bind(this);
-        this.renderChart = this.renderChart.bind(this);
+        this.renderChart = this.renderChart.bind(this)
     }
 
     renderQueries() {
@@ -112,11 +112,11 @@ export default class Index extends React.Component<Props, State> {
                 queries: response.data.queries,
                 hasResults: withResults,
             })
-        );
+        )
     }
 
     componentWillMount() {
-        this.getQueries(false);
+        this.getQueries(false)
     }
 
     handleDelete(id) {
@@ -125,20 +125,20 @@ export default class Index extends React.Component<Props, State> {
 
         this.setState({queries: updatedQueries});
 
-        axios.delete(`/queries/${id}`);
+        axios.delete(`/queries/${id}`)
     }
 
     showChart() {
-        this.getQueries(true);
+        this.getQueries(true)
     }
 
     renderChart() {
         if (!this.state.queries.length) {
-            return <div/>;
+            return <div/>
         }
 
         if (!this.state.hasResults) {
-            return <div/>;
+            return <div/>
         }
 
         let chartData = [];
@@ -159,7 +159,7 @@ export default class Index extends React.Component<Props, State> {
                 chartRowsData.push([
                     query.name,
                     query.result.length,
-                ]);
+                ])
             }
         });
 
@@ -241,6 +241,6 @@ export default class Index extends React.Component<Props, State> {
                 </div>
                 {this.renderChart()}
             </div>
-        );
+        )
     }
 }

@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import Routes from '../routes';
+import Routes from '../routes'
 
 import Footer from './todos/Footer'
 import AddTodo from '../containers/todos/AddTodo'
@@ -13,6 +13,6 @@ const App: React.FunctionComponent = () => (
         <VisibleTodoList/>
         <Footer/>
     </>
-);
+)
 
-export default App;
+export default App
